@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Page 1</string>
+    <string name="ek_img_content">ExportKit Image</string>
+    <string name="login_string">LOGIN</string>
+    <string name="signup_string">SIGN UP</string>
+
+    <string name="id_string">ID</string>
+    <string name="pw_string">PW</string>
+    <string name="nick_string">Nick</string>
+    <string name="__name_string">-Name</string>
+    <string name="gender_string">Gender</string>
+    <string name="age_string">Age</string>
+    <string name="sinup2_string">회원가입</string>
+    <string name="__e_mail__string">(e-mail)</string>
+
+    <string name="login_ek3_string">LOGIN</string>
+    <string name="douwantjoin2_string"><u> 아직 계정이 없으신가요?</u></string>
+    <string name="login2_string">로그인</string>
+
+    <string name="home_ek3_string">홈</string>
+    <string name="commu_string">커뮤니티</string>
+    <string name="media_string">미디어</string>
+    <string name="mypage_string">마이페이지</string>
+    <string name="camera_string">카메라</string>
+</resources>

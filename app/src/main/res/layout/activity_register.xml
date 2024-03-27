@@ -1,0 +1,220 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="match_parent" >
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+
+
+        <RelativeLayout
+            android:layout_marginTop="0dp"
+            android:layout_marginStart="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/_bg__signup_ek2_shape" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/background_shape" />
+
+            <TextView
+                android:textSize="33sp"
+                android:textColor="@color/id_color"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="148dp"
+                android:layout_width="62.3dp"
+                android:layout_height="51.3dp"
+                android:text="@string/id_string"
+                />
+
+            <TextView
+                android:textSize="13sp"
+                android:textColor="@color/id_color"
+                android:layout_marginLeft="26dp"
+                android:layout_marginTop="178dp"
+                android:layout_width="53.3dp"
+                android:layout_height="25.3dp"
+                android:text="@string/__e_mail__string"
+                />
+
+            <View
+                android:background="@drawable/idblank_shape"
+                android:layout_marginStart="90dp"
+                android:layout_marginTop="148dp"
+                android:layout_width="236dp"
+                android:layout_height="41dp" />
+
+            <EditText
+                android:id="@+id/edtEmail"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="148dp"
+                android:layout_width="210dp"
+                android:layout_height="40dp"
+                android:inputType="textEmailAddress"
+                android:hint="아이디(이메일)을 입력"
+                android:textSize="15dp"
+                />
+            `
+            <TextView
+                android:textSize="32sp"
+                android:textColor="@color/id_color"
+                android:layout_marginLeft="28dp"
+                android:layout_marginTop="219dp"
+                android:layout_width="92.2dp"
+                android:layout_height="62.2dp"
+                android:text="@string/pw_string"
+                />
+
+            <View
+                android:background="@drawable/pwblank_shape"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="219dp"
+                android:layout_width="236dp"
+                android:layout_height="41dp" />
+
+            <EditText
+                android:id="@+id/edtPassword"
+                android:layout_marginStart="110dp"
+                android:layout_marginTop="219dp"
+                android:layout_width="211dp"
+                android:layout_height="40dp"
+                android:textSize="15dp"
+                android:inputType="textPassword"
+                android:hint="비밀번호를 입력"
+                />
+
+            <TextView
+                android:textSize="20sp"
+                android:textColor="@color/id_color"
+                android:layout_marginLeft="23dp"
+                android:layout_marginTop="291dp"
+                android:layout_width="57dp"
+                android:layout_height="29dp"
+                android:text="@string/nick_string"
+                />
+
+            <TextView
+                android:textSize="20sp"
+                android:textColor="@color/id_color"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="309dp"
+                android:layout_width="84dp"
+                android:layout_height="29dp"
+                android:text="@string/__name_string"
+                />
+
+            <View
+                android:layout_width="236dp"
+                android:layout_height="41dp"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="291dp"
+                android:background="@drawable/nameblank_shape" />
+
+            <EditText
+                android:id="@+id/edtNickname"
+                android:layout_width="211dp"
+                android:layout_height="41dp"
+                android:layout_marginStart="110dp"
+                android:layout_marginTop="291dp"
+                android:textSize="15dp"
+                android:inputType="text"
+                android:hint="닉네임을 입력"
+                />
+
+            <TextView
+                android:textSize="20sp"
+                android:textColor="@color/id_color"
+                android:layout_marginLeft="23dp"
+                android:layout_marginTop="360dp"
+                android:layout_width="84dp"
+                android:layout_height="29dp"
+                android:text="@string/gender_string"
+                />
+            <RadioGroup
+                android:id="@+id/rgroup1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="360dp"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/rdoMale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="90dp"
+                    android:text="남성"/>
+                <RadioButton
+                    android:id="@+id/rdoFemale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="여성"/>
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="84dp"
+                android:layout_height="29dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="411dp"
+                android:text="@string/age_string"
+                android:textColor="@color/id_color"
+                android:textSize="20sp" />
+
+            <View
+                android:layout_width="130dp"
+                android:layout_height="41dp"
+                android:layout_marginStart="110dp"
+                android:layout_marginTop="403dp"
+                android:background="@drawable/ageblank_shape" />
+
+            <Spinner
+                android:id="@+id/spinAge"
+                android:layout_width="130dp"
+                android:layout_height="41dp"
+                android:layout_marginStart="110dp"
+                android:layout_marginTop="403dp" />
+
+            <View
+                android:id="@+id/btnRegister"
+                android:background="@drawable/signupbtn2_shape"
+                android:layout_marginStart="96dp"
+                android:layout_marginTop="534dp"
+                android:layout_width="167dp"
+                android:layout_height="46dp" />
+
+            <TextView
+                android:layout_width="125dp"
+                android:layout_height="61dp"
+                android:layout_marginLeft="143dp"
+                android:layout_marginTop="545dp"
+                android:text="@string/sinup2_string"
+                android:textColor="@color/id_color"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+
+            <ImageView
+                android:src="@drawable/titlel"
+                android:contentDescription="titlel"
+                android:layout_marginStart="19dp"
+                android:layout_marginTop="21dp"
+                android:layout_width="321dp"
+                android:layout_height="98dp" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

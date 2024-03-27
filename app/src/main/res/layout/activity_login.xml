@@ -1,0 +1,165 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="wrap_content" >
+    <!--
+    /*
+     *	This content is generated from the API File Info.
+     *	(Alt+Shift+Ctrl+I).
+     *
+     *	@desc
+     *	@file 		login
+     *	@date 		Tuesday 26th of March 2024 07:57:36 AM
+     *	@title 		Page 1
+     *	@author
+     *	@keywords
+     *	@generator 	Export Kit v1.3.figma
+     *
+     */
+    -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+
+
+        <RelativeLayout
+            android:layout_marginTop="0dp"
+            android:layout_marginStart="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <View
+                android:background="@drawable/_bg__login_ek2_shape"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <View
+                android:background="@drawable/background_shape"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:textSize="16sp"
+                android:textColor="@color/login_ek3_color"
+                android:layout_marginLeft="165dp"
+                android:layout_marginTop="227dp"
+                android:layout_width="63.6dp"
+                android:layout_height="23.6dp"
+                android:text="@string/login_ek3_string"
+                />
+
+
+
+            <View
+                android:background="@drawable/idblank_shape"
+                android:layout_marginStart="95dp"
+                android:layout_marginTop="274dp"
+                android:layout_width="236dp"
+                android:layout_height="41dp" />
+
+            <EditText
+                android:id="@+id/edtEmail"
+                android:layout_marginStart="105dp"
+                android:layout_marginTop="274dp"
+                android:layout_width="221dp"
+                android:layout_height="41dp"
+                android:textSize="15dp"
+                android:inputType="textEmailAddress"
+                android:hint="아이디를 입력하세요!"
+                />
+
+            <View
+                android:background="@drawable/pwblank_shape"
+                android:layout_marginStart="97dp"
+                android:layout_marginTop="351dp"
+                android:layout_width="236dp"
+                android:layout_height="41dp" />
+
+            <EditText
+                android:id="@+id/edtPassword"
+                android:layout_marginStart="107dp"
+                android:layout_marginTop="351dp"
+                android:layout_width="221dp"
+                android:layout_height="41dp"
+                android:textSize="15dp"
+                android:inputType="textPassword"
+                android:hint="비밀번호를 입력하세요!"
+                />
+
+            <TextView
+                android:textSize="33sp"
+                android:textColor="@color/login_ek3_color"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="265dp"
+                android:layout_width="62.3dp"
+                android:layout_height="51.3dp"
+                android:text="@string/id_string"
+                />
+
+            <TextView
+                android:textSize="32sp"
+                android:textColor="@color/login_ek3_color"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="343dp"
+                android:layout_width="92.2dp"
+                android:layout_height="62.2dp"
+                android:text="@string/pw_string"
+                />
+
+            <TextView android:id="@+id/tv_register"
+                android:textSize="15sp"
+                android:textColor="@color/douwantjoin2_color"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="533dp"
+                android:layout_width="174.5dp"
+                android:layout_height="22.5dp"
+                android:text="@string/douwantjoin2_string"
+                />
+
+            <View   android:id="@+id/btnLogin"
+                android:background="@drawable/loginbtn2_shape"
+                android:layout_marginStart="96dp"
+                android:layout_marginTop="477dp"
+                android:layout_width="167dp"
+                android:layout_height="46dp" />
+
+            <TextView
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/login_ek3_color"
+                android:layout_marginLeft="152dp"
+                android:layout_marginTop="488dp"
+                android:layout_width="125dp"
+                android:layout_height="61dp"
+                android:text="@string/login2_string"
+                />
+
+            <TextView
+                android:textSize="13sp"
+                android:textColor="@color/login_ek3_color"
+                android:layout_marginLeft="28dp"
+                android:layout_marginTop="299dp"
+                android:layout_width="53.3dp"
+                android:layout_height="25.3dp"
+                android:text="@string/__e_mail__string"
+                />
+
+            <ImageView
+                android:src="@drawable/titlexl"
+                android:contentDescription="titlexl"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="44dp"
+                android:layout_width="317dp"
+                android:layout_height="123dp" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

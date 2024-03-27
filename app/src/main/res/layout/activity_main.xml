@@ -1,0 +1,164 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="wrap_content" >
+    <!--
+    /*
+     *	This content is generated from the API File Info.
+     *	(Alt+Shift+Ctrl+I).
+     *
+     *	@desc
+     *	@file 		home
+     *	@date 		Tuesday 26th of March 2024 08:02:13 AM
+     *	@title 		Page 1
+     *	@author
+     *	@keywords
+     *	@generator 	Export Kit v1.3.figma
+     *
+     */
+    -->
+
+
+    <RelativeLayout android:id="@+id/content_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+
+
+        <RelativeLayout android:id="@+id/page_home_ek1"
+            android:layout_marginTop="0dp"
+            android:layout_marginStart="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <View   android:id="@+id/_bg__home_ek2"
+                android:background="@drawable/_bg__home_ek2_shape"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <View
+                android:id="@+id/background2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/background2_shape" />
+
+            <View   android:id="@+id/menu"
+                android:background="@drawable/menu_shape"
+                android:alpha="0"
+                android:layout_marginStart="-5dp"
+                android:layout_marginTop="560dp"
+                android:layout_width="500dp"
+                android:layout_height="165dp" />
+
+            <ImageView android:id="@+id/commubtn"
+                android:src="@drawable/commubtn"
+                android:contentDescription="commubtn"
+                android:layout_marginStart="99dp"
+                android:layout_marginTop="650dp"
+                android:layout_width="40dp"
+                android:layout_height="39dp" />
+
+            <ImageView android:id="@+id/homesbtn"
+                android:src="@drawable/homesbtn"
+                android:contentDescription="homesbtn"
+                android:layout_marginStart="31dp"
+                android:layout_marginTop="660dp"
+                android:layout_width="34dp"
+                android:layout_height="32dp" />
+
+            <ImageView android:id="@+id/mediabtn"
+                android:src="@drawable/mediabtn"
+                android:contentDescription="mediabtn"
+                android:layout_marginStart="241dp"
+                android:layout_marginTop="655dp"
+                android:layout_width="34dp"
+                android:layout_height="32dp" />
+
+            <ImageView android:id="@+id/mybtn"
+                android:src="@drawable/mybtn"
+                android:contentDescription="mybtn"
+                android:layout_marginStart="303dp"
+                android:layout_marginTop="650dp"
+                android:layout_width="44dp"
+                android:layout_height="40dp" />
+
+            <ImageView android:id="@+id/camerabtn"
+                android:src="@drawable/camerabtn"
+                android:contentDescription="camerabtn"
+                android:layout_marginStart="170dp"
+                android:layout_marginTop="652dp"
+                android:layout_width="34dp"
+                android:layout_height="35dp" />
+
+            <TextView android:id="@+id/home_ek3"
+                android:textSize="11sp"
+                android:textColor="@color/menu_color"
+                android:layout_marginLeft="41dp"
+                android:layout_marginTop="690dp"
+                android:layout_width="23.1dp"
+                android:layout_height="16.1dp"
+                android:text="@string/home_ek3_string"
+                />
+
+            <TextView android:id="@+id/commu"
+                android:textSize="11sp"
+                android:textColor="@color/menu_color"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="690dp"
+                android:layout_width="53.1dp"
+                android:layout_height="16.1dp"
+                android:text="@string/commu_string"
+                />
+
+            <TextView
+                android:textSize="11sp"
+                android:textColor="@color/menu_color"
+                android:layout_marginLeft="242dp"
+                android:layout_marginTop="690dp"
+                android:layout_width="43.1dp"
+                android:layout_height="16.1dp"
+                android:text="@string/media_string"
+                />
+
+            <TextView
+                android:textSize="11sp"
+                android:textColor="@color/menu_color"
+                android:layout_marginLeft="303dp"
+                android:layout_marginTop="690dp"
+                android:layout_width="63.1dp"
+                android:layout_height="16.1dp"
+                android:text="@string/mypage_string"
+                />
+
+            <TextView
+                android:textSize="11sp"
+                android:textColor="@color/menu_color"
+                android:layout_marginLeft="171dp"
+                android:layout_marginTop="690dp"
+                android:layout_width="33.1dp"
+                android:layout_height="16.1dp"
+                android:text="@string/camera_string"
+                />
+
+            <ImageView android:id="@+id/searchbtn"
+                android:src="@drawable/searchbtn"
+                android:contentDescription="searchbtn"
+                android:layout_marginStart="317dp"
+                android:layout_marginTop="49dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp" />
+
+            <ImageView android:id="@+id/titlem"
+                android:src="@drawable/titlem"
+                android:contentDescription="titlem"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="31dp"
+                android:layout_width="108dp"
+                android:layout_height="49.11dp" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>
