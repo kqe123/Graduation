@@ -58,6 +58,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+
         TextView tv_register = findViewById(R.id.tv_register);
         tv_register.setOnClickListener(new View.OnClickListener() {
             @Override

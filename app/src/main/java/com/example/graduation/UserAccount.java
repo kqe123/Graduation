@@ -9,6 +9,15 @@ public class UserAccount
     private String nickname; // 닉네임
     private String gender; // 성별
     private String age; // 연령대
+    private String degree; // 사용자 취향(도수)
+    private String price; // 사용자 취향(가격)
+    private int sweetness; // 사용자 취향(단맛)
+    private int bitterness; // 사용자 취향(쓴맛)
+    private Boolean carbonated; // 사용자 취향(탄산)
+
+
+
+
 
     public UserAccount() { }
 
@@ -35,4 +44,24 @@ public class UserAccount
     public String getAge() { return age; }
 
     public void setAge(String age) { this.age = age; }
+
+    public String getDegree() { return degree; }
+
+    public void setDegree(String degree) { this.degree = degree; }
+
+    public String getPrice() { return price; }
+
+    public void setPrice(String price) { this.price = price; }
+
+    public int getSweetness() { return sweetness; }
+
+    public void setSweetness(int sweetness) { this.sweetness = sweetness; }
+
+    public int getBitterness() { return bitterness; }
+
+    public void setBitterness(int bitterness) { this.bitterness = bitterness; }
+
+    public Boolean getCarbonated() { return carbonated; }
+
+    public void setCarbonated(Boolean carbonated) { this.carbonated = carbonated; }
 }

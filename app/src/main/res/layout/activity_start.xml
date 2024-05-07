@@ -1,99 +1,58 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent" android:layout_height="match_parent" >
-    <!--
-    /*
-     *	This content is generated from the API File Info.
-     *	(Alt+Shift+Ctrl+I).
-     *
-     *	@desc
-     *	@file 		start
-     *	@date 		Tuesday 26th of March 2024 07:55:35 AM
-     *	@title 		Page 1
-     *	@author
-     *	@keywords
-     *	@generator 	Export Kit v1.3.figma
-     *
-     */
-    -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center">
+        <ImageView
+            android:src="@drawable/titlexl"
+            android:contentDescription="titlexl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="top|center">
+        <Button
+            android:id="@+id/btn_go_login"
+            android:layout_width="216dp"
+            android:layout_height="69dp"
+            android:background="@drawable/loginbtn_shape"
+            android:text="LOGIN"
+            android:textSize="30dp"
+            />
 
 
 
-        <RelativeLayout
-            android:layout_marginTop="0dp"
-            android:layout_marginStart="0dp"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            >
+        <Button
+            android:id="@+id/btn_go_signup"
+            android:background="@drawable/signupbtn_shape"
+            android:layout_width="216dp"
+            android:layout_height="69dp"
+            android:layout_marginTop="20dp"
+            android:text="SIGN UP"
+            android:textSize="30dp"/>
 
-            <View
-                android:background="@drawable/_bg__start_ek2_shape"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="0dp"
-                android:layout_marginEnd="0dp"
-                android:layout_marginBottom="0dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="690dp"
-                android:layout_weight="1"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_marginEnd="10dp"
-                android:background="@drawable/background_shape" />
 
-            <View
-                android:id="@+id/btn_go_login"
-                android:layout_width="236dp"
-                android:layout_height="69dp"
-                android:layout_marginStart="70dp"
-                android:layout_marginTop="365dp"
-                android:background="@drawable/loginbtn_shape" />
 
-            <TextView
-                android:textSize="32sp"
-                android:textColor="@color/login_color"
-                android:layout_marginLeft="148dp"
-                android:layout_marginTop="379dp"
-                android:layout_width="179.2dp"
-                android:layout_height="48dp"
-                android:text="@string/login_string"
-                />
 
-            <View
-                android:id="@+id/btn_go_signup"
-                android:background="@drawable/signupbtn_shape"
-                android:layout_marginStart="70dp"
-                android:layout_marginTop="448dp"
-                android:layout_width="236dp"
-                android:layout_height="69dp" />
 
-            <TextView
-                android:textSize="32sp"
-                android:textColor="@color/signup_color"
-                android:layout_marginLeft="130dp"
-                android:layout_marginTop="462dp"
-                android:layout_width="199.2dp"
-                android:layout_height="48dp"
-                android:text="@string/signup_string"
-                />
 
-            <ImageView
-                android:src="@drawable/titlexl"
-                android:contentDescription="titlexl"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="113dp"
-                android:layout_width="match_parent"
-                android:layout_height="123dp" />
 
-        </RelativeLayout>
-    </RelativeLayout>
+    </LinearLayout>
 
-</RelativeLayout>
+
+
+
+
+</LinearLayout>
