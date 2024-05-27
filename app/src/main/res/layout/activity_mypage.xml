@@ -65,22 +65,33 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/maruburi"
+                android:textSize="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/edit_box"
+                android:textColor="@color/black"
+                android:text="사용자 계정 정보"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
-                    android:layout_width="200dp"
+                    android:layout_width="170dp"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:layout_marginLeft="10dp"
                     android:fontFamily="@font/maruburi"
-                    android:text="아이디(Email) : " />
+                    android:text="아이디(Email)"
+                    />
 
                 <TextView
                     android:id="@+id/emailID"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:text="....."
                     android:fontFamily="@font/maruburi"
                     android:textColor="@color/black"
@@ -88,29 +99,25 @@
 
             </LinearLayout>
 
-            <View
-                android:layout_marginTop="15dp"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#BBBCB6" />
+
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp">
                 <TextView
-                    android:layout_width="200dp"
+                    android:layout_width="170dp"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:layout_marginLeft="10dp"
                     android:fontFamily="@font/maruburi"
-                    android:text="닉네임 : "/>
+                    android:text="닉네임"/>
 
                 <TextView
                     android:id="@+id/nickname"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:text="....."
                     android:fontFamily="@font/maruburi"
                     android:textColor="@color/black"
@@ -118,29 +125,25 @@
 
             </LinearLayout>
 
-            <View
-                android:layout_marginTop="15dp"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#BBBCB6" />
+
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp">
                 <TextView
-                    android:layout_width="200dp"
+                    android:layout_width="170dp"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:layout_marginLeft="10dp"
                     android:fontFamily="@font/maruburi"
-                    android:text="성별 : "/>
+                    android:text="성별"/>
 
                 <TextView
                     android:id="@+id/gender"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:text="....."
                     android:fontFamily="@font/maruburi"
                     android:textColor="@color/black"
@@ -148,29 +151,24 @@
 
             </LinearLayout>
 
-            <View
-                android:layout_marginTop="15dp"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#BBBCB6" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp">
                 <TextView
-                    android:layout_width="200dp"
+                    android:layout_width="170dp"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:layout_marginLeft="10dp"
                     android:fontFamily="@font/maruburi"
-                    android:text="연령대 : "/>
+                    android:text="연령대"/>
 
                 <TextView
                     android:id="@+id/age"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:text="....."
                     android:fontFamily="@font/maruburi"
                     android:textColor="@color/black"
@@ -183,24 +181,34 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#BBBCB6" />
-
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/maruburi"
+                android:textSize="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edit_box"
+                android:textColor="@color/black"
+                android:text="사용자 취향 정보"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp">
+                >
                 <TextView
-                    android:layout_width="200dp"
+                    android:layout_width="170dp"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:layout_marginLeft="10dp"
                     android:fontFamily="@font/maruburi"
-                    android:text="선호 도수 : "/>
+                    android:text="선호 도수"/>
 
                 <TextView
                     android:id="@+id/degree"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:text="....."
                     android:fontFamily="@font/maruburi"
                     android:textColor="@color/black"
@@ -208,29 +216,23 @@
 
             </LinearLayout>
 
-            <View
-                android:layout_marginTop="15dp"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#BBBCB6" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp">
                 <TextView
-                    android:layout_width="200dp"
+                    android:layout_width="170dp"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:layout_marginLeft="10dp"
                     android:fontFamily="@font/maruburi"
-                    android:text="선호 가격 : "/>
+                    android:text="선호 가격"/>
 
                 <TextView
                     android:id="@+id/price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:text="....."
                     android:fontFamily="@font/maruburi"
                     android:textColor="@color/black"
@@ -238,29 +240,23 @@
 
             </LinearLayout>
 
-            <View
-                android:layout_marginTop="15dp"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#BBBCB6" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp">
                 <TextView
-                    android:layout_width="200dp"
+                    android:layout_width="170dp"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:layout_marginLeft="10dp"
                     android:fontFamily="@font/maruburi"
-                    android:text="선호 단맛 : "/>
+                    android:text="선호 단맛"/>
 
                 <TextView
                     android:id="@+id/sweetness"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:text="....."
                     android:fontFamily="@font/maruburi"
                     android:textColor="@color/black"
@@ -268,29 +264,23 @@
 
             </LinearLayout>
 
-            <View
-                android:layout_marginTop="15dp"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#BBBCB6" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp">
                 <TextView
-                    android:layout_width="200dp"
+                    android:layout_width="170dp"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:layout_marginLeft="10dp"
                     android:fontFamily="@font/maruburi"
-                    android:text="선호 쓴맛 : "/>
+                    android:text="선호 쓴맛"/>
 
                 <TextView
                     android:id="@+id/bitterness"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:text="....."
                     android:fontFamily="@font/maruburi"
                     android:textColor="@color/black"
@@ -298,29 +288,25 @@
 
             </LinearLayout>
 
-            <View
-                android:layout_marginTop="15dp"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#BBBCB6" />
+
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp">
                 <TextView
-                    android:layout_width="200dp"
+                    android:layout_width="170dp"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:layout_marginLeft="10dp"
                     android:fontFamily="@font/maruburi"
-                    android:text="탄산 여부 : "/>
+                    android:text="탄산 여부"/>
 
                 <TextView
                     android:id="@+id/carbonated"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:text="....."
                     android:fontFamily="@font/maruburi"
                     android:textColor="@color/black"

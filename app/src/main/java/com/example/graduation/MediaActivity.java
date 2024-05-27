@@ -27,7 +27,7 @@ public class MediaActivity extends AppCompatActivity {
     private ArrayList<Media> arrayList;
     private FirebaseDatabase database;
     private DatabaseReference databaseReference;
-    ImageView homeBtn, cameraBtn, mypageBtn;
+    ImageView homeBtn, cameraBtn, mypageBtn, searchBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +45,7 @@ public class MediaActivity extends AppCompatActivity {
         homeBtn = findViewById(R.id.homebtn);
         cameraBtn = findViewById(R.id.camerabtn);
         mypageBtn = findViewById(R.id.mypagebtn);
+        searchBtn = findViewById(R.id.searchbtn);
 
         database = FirebaseDatabase.getInstance();
         databaseReference = database.getReference("Graduation").child("Media");
@@ -89,11 +90,22 @@ public class MediaActivity extends AppCompatActivity {
 
             }
         });
-
+        
+        //마이페이지 버튼
         mypageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MediaActivity.this, MypageActivity.class);
+                startActivity(intent);
+                finish(); // 현재 액티비티 종료
+            }
+        });
+        
+        //검색 버튼
+        searchBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MediaActivity.this, SearchActivity.class);
                 startActivity(intent);
                 finish(); // 현재 액티비티 종료
             }

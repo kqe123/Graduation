@@ -32,7 +32,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.Objects;
 
 public class MypageActivity extends AppCompatActivity {
-    ImageView homeBtn, cameraBtn, mediaBtn;
+    ImageView homeBtn, cameraBtn, mediaBtn, searchBtn;
     private FirebaseAuth mAuth;
     private DatabaseReference databaseReference;
     TextView tv_emailId,tv_nickname,tv_gender,tv_age;   // 사용자 취향정보
@@ -52,6 +52,7 @@ public class MypageActivity extends AppCompatActivity {
         homeBtn = findViewById(R.id.homebtn);
         cameraBtn = findViewById(R.id.camerabtn);
         mediaBtn = findViewById(R.id.mediabtn);
+        searchBtn = findViewById(R.id.searchbtn);
         tv_emailId = findViewById(R.id.emailID);
         tv_nickname = findViewById(R.id.nickname);
         tv_gender = findViewById(R.id.gender);
@@ -100,7 +101,7 @@ public class MypageActivity extends AppCompatActivity {
                             else { tv_carbonated.setText("X"); }
 
                     } else {
-                        Toast.makeText(getApplicationContext(),"현재 로그인이 안되어있습니다!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"오류! 해당 계정이 없습니다!", Toast.LENGTH_SHORT).show();
                     }
                 }
 
@@ -362,7 +363,15 @@ public class MypageActivity extends AppCompatActivity {
             }
         });
 
-
+        //검색 버튼
+        searchBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MypageActivity.this, SearchActivity.class);
+                startActivity(intent);
+                finish(); // 현재 액티비티 종료
+            }
+        });
 
 
     }

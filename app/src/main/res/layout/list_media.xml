@@ -2,29 +2,33 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:gravity="center">
+    android:orientation="vertical">
 
 
     <com.google.android.exoplayer2.ui.PlayerView
         android:id="@+id/playerView"
-        android:layout_width="300dp"
-        android:layout_height="200dp" />
+        android:layout_width="325dp"
+        android:layout_height="250dp"
+        android:layout_gravity="center"/>
     <TextView
         android:id="@+id/tv_title"
-        android:layout_width="wrap_content"
+        android:layout_width="325dp"
+        android:layout_gravity="center"
         android:layout_height="wrap_content"
         android:fontFamily="@font/maruburi"
+        android:textColor="@color/black"
         android:text="제목....."/>
     <LinearLayout
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_width="325dp"
+        android:layout_gravity="center"
         android:orientation="horizontal">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/maruburi"
-            android:text="조회수 :  "/>
+            android:text="조회수 :  "
+            android:textColor="@color/black" />
         <TextView
             android:id="@+id/tv_views"
             android:layout_width="wrap_content"
@@ -33,25 +37,43 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/maruburi"
             android:text="회"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="325dp"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:fontFamily="@font/maruburi"
+            android:text="게시일 :  " />
         <TextView
             android:id="@+id/tv_post_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="    1년전"/>
+            android:text="1년전" />
     </LinearLayout>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/maruburi"
-        android:text="출처 : " />
-    <TextView
-        android:id="@+id/tv_source"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="10dp"
-        android:text="https://www.youtube.com/watch?v=6xvew8_9tyA"/>
+    <LinearLayout
+        android:layout_width="325dp"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:fontFamily="@font/maruburi"
+            android:text="출처 :   " />
+        <TextView
+            android:id="@+id/tv_source"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dp"
+            android:text="https://www.youtube.com/watch?v=6xvew8_9tyA"/>
+    </LinearLayout>
 
 
 </LinearLayout>

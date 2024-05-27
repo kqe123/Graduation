@@ -43,12 +43,13 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center">
-            <ImageView android:id="@+id/searchbtn"
-                android:src="@drawable/searchbtn"
-                android:contentDescription="searchbtn"
+
+            <ImageView
+                android:id="@+id/searchbtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                />
+                android:contentDescription="searchbtn"
+                android:src="@drawable/searchbtn" />
         </LinearLayout>
     </LinearLayout>
 

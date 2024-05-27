@@ -180,6 +180,7 @@
                 android:numStars="5"
                 android:stepSize="1"
                 android:rating="3"
+                android:min="0"
                 android:isIndicator="false"
                 android:layout_marginLeft="20dp"/>
 
@@ -219,6 +220,7 @@
                 android:numStars="5"
                 android:stepSize="1"
                 android:rating="3"
+                android:min="0"
                 android:isIndicator="false"
                 android:layout_marginLeft="20dp"/>
 

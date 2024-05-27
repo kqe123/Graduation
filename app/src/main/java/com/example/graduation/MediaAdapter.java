@@ -41,7 +41,7 @@ public class MediaAdapter extends RecyclerView.Adapter<MediaAdapter.MediaViewHol
         holder.bindVideo(arrayList.get(position).getUrl());
         holder.tv_title.setText(arrayList.get(position).getTitle());
         holder.tv_views.setText(arrayList.get(position).getViews());
-        holder.tv_post_date.setText("    " + arrayList.get(position).getPost_date());
+        holder.tv_post_date.setText(arrayList.get(position).getPost_date());
         holder.tv_source.setText(arrayList.get(position).getSource());
     }
 

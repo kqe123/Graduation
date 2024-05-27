@@ -68,7 +68,6 @@ public class CameraActivity extends AppCompatActivity {
                                 // insert your code here.
 
                                 Log.d(TAG+ " onImageSavedgetSavedUri", String.valueOf(outputFileResults.getSavedUri()));
-                                Toast.makeText(getApplicationContext(), fileName,Toast.LENGTH_LONG).show();
                                 Intent intent = new Intent(CameraActivity.this, CaptureActivity.class);
                                 intent.putExtra("fileName", fileName);
                                 startActivity(intent);

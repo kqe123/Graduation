@@ -36,8 +36,6 @@ public class CaptureActivity extends AppCompatActivity {
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(CaptureActivity.this, CameraActivity.class);
-                startActivity(intent);
                 finish(); // 현재 액티비티 파괴
             }
         });

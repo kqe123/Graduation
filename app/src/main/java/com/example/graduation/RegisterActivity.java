@@ -36,7 +36,7 @@ public class RegisterActivity extends AppCompatActivity {
     private View mBtnRegister;
     TextView sweet, bitter, dg,pi,cn;
     int sweetness = -1, bitterness = -1; // 사용자 취향정보(단맛, 쓴맛)
-    String degree,price;     // 사용자 취향정보(도수, 가격)
+    String degree,price,recom1st,recom2nd,recom3rd;     // 사용자 취향정보(도수, 가격)
     Boolean carbonated;       // 사용자 취향정보(탄산)
 
     private ActivityResultLauncher<Intent> mPreContractStartActivityResult =
@@ -53,6 +53,10 @@ public class RegisterActivity extends AppCompatActivity {
                                 degree = data.getStringExtra("degree");
                                 price = data.getStringExtra("price");
                                 carbonated = data.getBooleanExtra("carbonated", true);
+                                recom1st = data.getStringExtra("recom1st");
+                                recom2nd = data.getStringExtra("recom2nd");
+                                recom3rd = data.getStringExtra("recom3rd");
+
                             }
                         }
                     });
@@ -72,7 +76,7 @@ public class RegisterActivity extends AppCompatActivity {
         mBtnRegister = findViewById(R.id.btnRegister);
 
         //스피너 설정
-        final String[] age = {"10대","20대", "30대","40대","50대 이상"};
+        final String[] age = {"20대", "30대","40대","50대 이상"};
         Spinner spinner = (Spinner) findViewById(R.id.spinAge);
 
         ArrayAdapter<String> adapter;
@@ -125,9 +129,6 @@ public class RegisterActivity extends AppCompatActivity {
                                         break;
                                 }
                                 switch (spinner.getSelectedItem().toString()) {
-                                    case "10대":
-                                        account.setAge("10대");
-                                        break;
                                     case "20대":
                                         account.setAge("20대");
                                         break;
@@ -141,12 +142,15 @@ public class RegisterActivity extends AppCompatActivity {
                                         account.setAge("50대 이상");
                                         break;
                                 }
+
                                 account.setDegree(degree);
                                 account.setPrice(price);
                                 account.setCarbonated(carbonated);
                                 account.setBitterness(bitterness);
                                 account.setSweetness(sweetness);
-
+                                account.setRecom1st(recom1st);
+                                account.setRecom2nd(recom2nd);
+                                account.setRecom3rd(recom3rd);
                                 // setvalue() : db insert 기능임.
                                 mDatabaseRef.child("UserAccount").child(firebaseUser.getUid()).setValue(account);
                                 Toast.makeText(RegisterActivity.this, "회원가입에 성공하였습니다", Toast.LENGTH_SHORT).show();

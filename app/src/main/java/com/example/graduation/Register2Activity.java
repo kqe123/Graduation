@@ -13,10 +13,11 @@ import android.widget.Toast;
 
 public class Register2Activity extends AppCompatActivity {
     Button setLikingBtn;
-    RadioGroup rgroupDegree, rgroupPrice, rgroupCarbonated;
+    RadioGroup rgroupDegree, rgroupPrice, rgroupCarbonated, rgroupRecom1, rgroupRecom2, rgroupRecom3;
     int sweetness, bitterness;
     String degree, price;
     Boolean carbonated;
+    String recom1st, recom2nd, recom3rd;
     RatingBar sweet,bitter;
 
     @Override
@@ -27,6 +28,9 @@ public class Register2Activity extends AppCompatActivity {
         rgroupDegree = findViewById(R.id.rgroupDegree); // 도수 radiogroup
         rgroupPrice = findViewById(R.id.rgroupPrice);   // 가격 radiogroup
         rgroupCarbonated = findViewById(R.id.rgroupCarbonated); // 탄산 radiogroup
+        rgroupRecom1 = findViewById(R.id.recommend1);
+        rgroupRecom2 = findViewById(R.id.recommend2);
+        rgroupRecom3 = findViewById(R.id.recommend3);
         setLikingBtn = findViewById(R.id.btn_set_liking);
         sweet = findViewById(R.id.sweetness); // 별 위젯(sweetness)
         bitter = findViewById(R.id.bitterness); // 별 위젯(bitterness)
@@ -41,10 +45,12 @@ public class Register2Activity extends AppCompatActivity {
                 int selectedDegreeId = rgroupDegree.getCheckedRadioButtonId();
                 int selectedPriceId = rgroupPrice.getCheckedRadioButtonId();
                 int selectedCarbonId = rgroupCarbonated.getCheckedRadioButtonId();
+                int selectedRecom1Id = rgroupRecom1.getCheckedRadioButtonId();
+                int selectedRecom2Id = rgroupRecom2.getCheckedRadioButtonId();
+                int selectedRecom3Id = rgroupRecom3.getCheckedRadioButtonId();
 
-
-                if (selectedDegreeId == -1 || selectedPriceId == -1 || selectedCarbonId == -1) {
-                    // 도수, 가격, 탄산여부 radiobutton이 아무것도 클릭되지 않았을때 동작
+                if (selectedDegreeId == -1 || selectedPriceId == -1 || selectedCarbonId == -1 || selectedRecom1Id == -1 || selectedRecom2Id == -1 || selectedRecom3Id == -1) {
+                    // 도수, 가격, 탄산여부, 1~3순위 추천요소 radiobutton이 아무것도 클릭되지 않았을때 동작
                     Toast.makeText(getApplicationContext(),"모든 질문에 답해주세요!", Toast.LENGTH_SHORT).show();
                 } else {
                     // 모든 질문에 답을 했을때 동작
@@ -94,14 +100,75 @@ public class Register2Activity extends AppCompatActivity {
                             break;
                     }
 
-                    //현재 표시된 단맛, 쓴맛의 별수를 반환
-                    outintent.putExtra("sweetness", sweetness);
-                    outintent.putExtra("bitterness", bitterness);
-                    outintent.putExtra("degree", degree);
-                    outintent.putExtra("price", price);
-                    outintent.putExtra("carbonated", carbonated);
-                    setResult(RESULT_OK, outintent);
-                    finish();
+                    switch(selectedRecom1Id) {
+                        case R.id.recom1Degree:
+                            recom1st = "도수";
+                            break;
+                        case R.id.recom1Price:
+                            recom1st = "가격";
+                            break;
+                        case R.id.recom1Sweet:
+                            recom1st = "단맛";
+                            break;
+                        case R.id.recom1Bitter:
+                            recom1st = "쓴맛";
+                            break;
+                        case R.id.recom1Carbon:
+                            recom1st = "탄산 여부";
+                            break;
+                    }
+
+                    switch(selectedRecom2Id) {
+                        case R.id.recom2Degree:
+                            recom2nd = "도수";
+                            break;
+                        case R.id.recom2Price:
+                            recom2nd = "가격";
+                            break;
+                        case R.id.recom2Sweet:
+                            recom2nd = "단맛";
+                            break;
+                        case R.id.recom2Bitter:
+                            recom2nd = "쓴맛";
+                            break;
+                        case R.id.recom2Carbon:
+                            recom2nd = "탄산 여부";
+                            break;
+                    }
+
+                    switch(selectedRecom3Id) {
+                        case R.id.recom3Degree:
+                            recom3rd = "도수";
+                            break;
+                        case R.id.recom3Price:
+                            recom3rd = "가격";
+                            break;
+                        case R.id.recom3Sweet:
+                            recom3rd = "단맛";
+                            break;
+                        case R.id.recom3Bitter:
+                            recom3rd = "쓴맛";
+                            break;
+                        case R.id.recom3Carbon:
+                            recom3rd = "탄산 여부";
+                            break;
+                    }
+                    if(recom1st.equals(recom2nd) || recom2nd.equals(recom3rd) || recom1st.equals(recom3rd)) {
+                        Toast.makeText(getApplicationContext(), "오류! 1~3순위를 각각 다르게 설정해주세요!", Toast.LENGTH_SHORT).show();
+                    }
+                    else {
+                        //현재 표시된 단맛, 쓴맛의 별수를 반환
+                        outintent.putExtra("sweetness", sweetness);
+                        outintent.putExtra("bitterness", bitterness);
+                        outintent.putExtra("degree", degree);
+                        outintent.putExtra("price", price);
+                        outintent.putExtra("carbonated", carbonated);
+                        outintent.putExtra("recom1st",recom1st);
+                        outintent.putExtra("recom2nd",recom2nd);
+                        outintent.putExtra("recom3rd",recom3rd);
+                        setResult(RESULT_OK, outintent);
+                        finish();
+                    }
                 }
             }
         });
