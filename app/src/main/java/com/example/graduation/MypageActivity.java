@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -32,12 +33,12 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.Objects;
 
 public class MypageActivity extends AppCompatActivity {
-    ImageView homeBtn, cameraBtn, mediaBtn, searchBtn;
+    ImageView homeBtn, cameraBtn, mediaBtn, commuBtn;
     private FirebaseAuth mAuth;
     private DatabaseReference databaseReference;
     TextView tv_emailId,tv_nickname,tv_gender,tv_age;   // 사용자 취향정보
-    TextView tv_degree,tv_price,tv_sweetness,tv_bitterness,tv_carbonated; // 사용자 취향정보
-    Button changePwBtn, changeLikingBtn, removeUserBtn; // 3개 버튼
+    TextView tv_degree,tv_price,tv_sweetness,tv_bitterness,tv_carbonated;// 사용자 취향정보
+    LinearLayout changePwBtn, changeLikingBtn, removeUserBtn;
     EditText edtRemove, edtnewPw, edtnewPwConfirm; // 삭제 텍스트, 새 비번, 새 비번확인
     RadioGroup rgroupDegree, rgroupPrice, rgroupCarbonated;
     RatingBar sweet, bitter;
@@ -52,7 +53,7 @@ public class MypageActivity extends AppCompatActivity {
         homeBtn = findViewById(R.id.homebtn);
         cameraBtn = findViewById(R.id.camerabtn);
         mediaBtn = findViewById(R.id.mediabtn);
-        searchBtn = findViewById(R.id.searchbtn);
+        commuBtn = findViewById(R.id.commubtn);
         tv_emailId = findViewById(R.id.emailID);
         tv_nickname = findViewById(R.id.nickname);
         tv_gender = findViewById(R.id.gender);
@@ -363,15 +364,16 @@ public class MypageActivity extends AppCompatActivity {
             }
         });
 
-        //검색 버튼
-        searchBtn.setOnClickListener(new View.OnClickListener() {
+        //커뮤니티 버튼
+        commuBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MypageActivity.this, SearchActivity.class);
+                Intent intent = new Intent(MypageActivity.this, CommunityActivity.class);
                 startActivity(intent);
                 finish(); // 현재 액티비티 종료
             }
         });
+
 
 
     }

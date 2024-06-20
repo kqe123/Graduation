@@ -6,46 +6,49 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/maruburi"
-        android:textColor="@color/_bg__start_ek2_color"
         android:layout_marginTop="15dp"
-        android:layout_marginLeft="5dp"
-        android:text='주의사항 : 비밀번호는 6자 이상으로 설정' />
+        android:layout_marginLeft="20dp"
+        android:textSize="18dp"
+        android:fontFamily="@font/spoqahansans_bold"
+        android:textColor="@color/black"
+        android:text="비밀번호는 6자 이상 입력해주세요." />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/maruburi"
         android:layout_marginTop="15dp"
-        android:layout_marginLeft="5dp"
+        android:layout_marginLeft="25dp"
+        android:text="새 비밀번호"
         android:textColor="@color/black"
-        android:text='새 비밀번호' />
+        android:fontFamily="@font/spoqahansans_bold"
+        android:textSize="15dp"/>
 
     <EditText
         android:id="@+id/newPw"
+        android:textSize="15dp"
+        android:background="@drawable/input_box"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="5dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginRight="5dp"
         android:inputType="textPassword"
-        android:background="@drawable/edit_box"
-        android:hint="새 비밀번호" />
+        android:hint="새 비밀번호 설정" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/maruburi"
         android:layout_marginTop="15dp"
-        android:layout_marginLeft="5dp"
+        android:layout_marginLeft="25dp"
+        android:text="새 비밀번호 확인"
         android:textColor="@color/black"
-        android:text='새 비밀번호 확인' />
+        android:fontFamily="@font/spoqahansans_bold"
+        android:textSize="15dp" />
     <EditText
         android:id="@+id/newPwConfirm"
+        android:textSize="15dp"
+        android:background="@drawable/input_box"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="5dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginRight="5dp"
         android:inputType="textPassword"
-        android:background="@drawable/edit_box"
         android:hint="새 비밀번호 확인" />
 </LinearLayout>

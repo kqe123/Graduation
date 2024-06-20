@@ -37,7 +37,7 @@ public class CommunityAdapter extends RecyclerView.Adapter<CommunityAdapter.Comm
         holder.tv_title.setOnClickListener(view -> {
             // 선택한 게시물의 ID를 가져와서 ComdetailActivity로 전달
             Intent intent = new Intent(context, ComdetailActivity.class);
-            intent.putExtra("title", arrayList.get(holder.getAdapterPosition()).getTitle());
+            intent.putExtra("title", arrayList.get(position).getTitle());
             context.startActivity(intent);
 
             Log.d("CommunityAdapter", "클릭됨" + arrayList.get(position).getTitle());

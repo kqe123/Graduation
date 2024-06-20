@@ -20,24 +20,23 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/maruburi"
                     android:textSize="20dp"
                     android:textColor="@color/black"
-                    android:text="1. 선호하는 " />
+                    android:fontFamily="@font/spoqahansans_bold"
+                    android:text="1. " />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/maruburi"
                     android:textSize="20dp"
-                    android:textColor="@color/_bg__start_ek2_color"
+                    android:textColor="@color/black"
+                    android:text="선호하는 " />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/spoqahansans_bold"
                     android:text="술의 도수" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/maruburi"
-                    android:textSize="20dp"
-                    android:textColor="@color/black"
-                    android:text="는? " />
             </LinearLayout>
             <RadioGroup
                 android:id="@+id/rgroupDegree"
@@ -48,36 +47,31 @@
                     android:id="@+id/rdoDegree10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/maruburi"
                     android:text="10 이하"
                     />
                 <RadioButton
                     android:id="@+id/rdoDegree20"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/maruburi"
-                    android:text="10~20"
+                    android:text="10~20 사이"
                     />
                 <RadioButton
                     android:id="@+id/rdoDegree30"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/maruburi"
-                    android:text="20~30"
+                    android:text="20~30 사이"
                     />
                 <RadioButton
                     android:id="@+id/rdoDegree40"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/maruburi"
-                    android:text="30~40"
+                    android:text="30~40 사이"
                     />
                 <RadioButton
                     android:id="@+id/rdoDegree50"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/maruburi"
-                    android:text="40~50"
+                    android:text="40~50 사이"
                     />
             </RadioGroup>
 
@@ -89,24 +83,23 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/maruburi"
                     android:textSize="20dp"
                     android:textColor="@color/black"
-                    android:text="2. 선호하는 " />
+                    android:fontFamily="@font/spoqahansans_bold"
+                    android:text="2. " />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/maruburi"
                     android:textSize="20dp"
-                    android:textColor="@color/_bg__start_ek2_color"
+                    android:textColor="@color/black"
+                    android:text="선호하는 " />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/spoqahansans_bold"
+                    android:textSize="20dp"
+                    android:textColor="@color/black"
                     android:text="술의 가격" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/maruburi"
-                    android:textSize="20dp"
-                    android:textColor="@color/black"
-                    android:text="은?" />
             </LinearLayout>
 
             <RadioGroup
@@ -118,28 +111,24 @@
                     android:id="@+id/rdoPrice5k"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/maruburi"
                     android:text="1만원 이하"
                     />
                 <RadioButton
                     android:id="@+id/rdoPrice25k"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/maruburi"
                     android:text="1~5만원"
                     />
                 <RadioButton
                     android:id="@+id/rdoPrice75k"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/maruburi"
                     android:text="5~10만원"
                     />
                 <RadioButton
                     android:id="@+id/rdoPrice100k"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/maruburi"
                     android:text="10만원 이상"
                     />
             </RadioGroup>
@@ -152,31 +141,36 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/maruburi"
                     android:textSize="20dp"
                     android:textColor="@color/black"
-                    android:text="3. 선호하는 " />
+                    android:fontFamily="@font/spoqahansans_bold"
+                    android:text="3. " />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/maruburi"
                     android:textSize="20dp"
-                    android:textColor="@color/_bg__start_ek2_color"
+                    android:textColor="@color/black"
+                    android:text="선호하는 " />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:fontFamily="@font/spoqahansans_bold"
+                    android:textColor="@color/black"
                     android:text="단맛" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/maruburi"
                     android:textSize="20dp"
                     android:textColor="@color/black"
-                    android:text="의 정도는?" />
+                    android:text="의 정도" />
             </LinearLayout>
 
             <RatingBar
                 android:id="@+id/sweetness"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:progressTint="@color/_bg__start_ek2_color"
+                android:progressTint="@color/black"
                 android:numStars="5"
                 android:stepSize="1"
                 android:rating="3"
@@ -192,31 +186,36 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/maruburi"
                     android:textSize="20dp"
                     android:textColor="@color/black"
-                    android:text="4. 선호하는 " />
+                    android:fontFamily="@font/spoqahansans_bold"
+                    android:text="4. " />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/maruburi"
                     android:textSize="20dp"
-                    android:textColor="@color/_bg__start_ek2_color"
+                    android:textColor="@color/black"
+                    android:text="선호하는 " />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/spoqahansans_bold"
+                    android:textSize="20dp"
+                    android:textColor="@color/black"
                     android:text="쓴맛" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/maruburi"
                     android:textSize="20dp"
                     android:textColor="@color/black"
-                    android:text="의 정도는?" />
+                    android:text="의 정도" />
             </LinearLayout>
 
             <RatingBar
                 android:id="@+id/bitterness"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:progressTint="@color/_bg__start_ek2_color"
+                android:progressTint="@color/black"
                 android:numStars="5"
                 android:stepSize="1"
                 android:rating="3"
@@ -232,24 +231,23 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/maruburi"
                     android:textSize="20dp"
                     android:textColor="@color/black"
+                    android:fontFamily="@font/spoqahansans_bold"
                     android:text="5. " />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/maruburi"
+                    android:fontFamily="@font/spoqahansans_bold"
                     android:textSize="20dp"
-                    android:textColor="@color/_bg__start_ek2_color"
+                    android:textColor="@color/black"
                     android:text="탄산" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/maruburi"
                     android:textSize="20dp"
                     android:textColor="@color/black"
-                    android:text="의 호불호는?" />
+                    android:text=" 여부" />
             </LinearLayout>
 
             <RadioGroup
@@ -262,14 +260,12 @@
                     android:id="@+id/rdoCarbon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/maruburi"
                     android:text="호"
                     />
                 <RadioButton
                     android:id="@+id/rdoNocarbon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/maruburi"
                     android:text="불호"
                     />
 

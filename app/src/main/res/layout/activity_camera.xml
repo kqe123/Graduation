@@ -7,16 +7,15 @@
 
     <androidx.camera.view.PreviewView
         android:id="@+id/previewView"
-        android:layout_height="650dp"
-        android:layout_width="match_parent" />
+        android:layout_width="match_parent"
+        android:layout_height="610dp" />
 
 
-    <Button
+    <ImageView
         android:id="@+id/capturebtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/maruburi"
-        android:text="촬영"
-        android:layout_gravity="center" />
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:src="@drawable/camera" />
 
 </LinearLayout>

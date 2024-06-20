@@ -29,7 +29,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class AlcoholActivity extends AppCompatActivity {
-    TextView tv_name, tv_degree, tv_carbonated, tv_price, tv_category, tv_taste, tv_content, tv_review, tv_totalscore;
+    TextView tv_name, tv_degree, tv_carbonated, tv_price, tv_category, tv_taste, tv_content, tv_review;
     ImageView iv_image, iv_backbtn;
     private FirebaseAuth mAuth;
     private RecyclerView.Adapter adapter;
@@ -45,7 +45,7 @@ public class AlcoholActivity extends AppCompatActivity {
     int reviewCount = 0; // 관련 술의 리뷰수
     Button registerBtn; // 리뷰 등록버튼
     EditText et_reviewcontent; // 리뷰 내용
-    RatingBar rb_score; // 별점
+    RatingBar rb_score, rb_totalscore; // 별점
     String age, gender, nickname, userUid;
 
     @Override
@@ -63,7 +63,7 @@ public class AlcoholActivity extends AppCompatActivity {
         tv_content = findViewById(R.id.content);
         iv_image = findViewById(R.id.image);
         tv_review = findViewById(R.id.reviewList);
-        tv_totalscore = findViewById(R.id.totalScore);
+        rb_totalscore = findViewById(R.id.totalScore);
         iv_backbtn = findViewById(R.id.backbtn);
         RecyclerView recyclerReview = findViewById(R.id.recyclerReview);
         registerBtn = findViewById(R.id.reviewbtn);
@@ -99,9 +99,9 @@ public class AlcoholActivity extends AppCompatActivity {
                 Glide.with(AlcoholActivity.this).load(image).into(iv_image);
                 tv_name.setText(alcohol_name);
                 tv_category.setText(category);
-                tv_degree.setText(Float.toString(degree));
-                tv_price.setText(Integer.toString(price));
-                tv_carbonated.setText(carbonated);
+                tv_degree.setText( Float.toString(degree) +"%   |");
+                tv_price.setText(Integer.toString(price) + " ₩");
+                tv_carbonated.setText("탄산  " + carbonated);
                 tv_taste.setText(taste);
                 tv_content.setText(content);
 
@@ -232,12 +232,12 @@ public class AlcoholActivity extends AppCompatActivity {
                     }
                 }
                 if(reviewCount == 0) {
-                    tv_totalscore.setText("0.0");
+                    rb_totalscore.setRating(0.0f);
                 }
                 else {
-                    tv_totalscore.setText(String.format("%.1f",reviewSum/reviewCount));
+                    rb_totalscore.setRating(reviewSum/reviewCount);
                 }
-                tv_review.setText("> " + Integer.toString(reviewCount)+"개의 댓글 목록");
+                tv_review.setText(Integer.toString(reviewCount)+"개의 댓글 목록");
             }
 
             @Override

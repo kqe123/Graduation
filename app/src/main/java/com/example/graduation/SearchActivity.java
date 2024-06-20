@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,7 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class SearchActivity extends AppCompatActivity {
-    TextView tv_beer, tv_soju, tv_wine, tv_whiskey, tv_rum, tv_jin, tv_vodka, tv_portwine, tv_champagne, tv_makgeolli;
+    LinearLayout beerBtn, sojuBtn, wineBtn, whiskeyBtn, rumBtn, jinBtn, vodkaBtn, portwineBtn, champagneBtn, makgeolliBtn;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
     private ArrayList<Alcohol> arrayList;
@@ -40,16 +41,16 @@ public class SearchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
-        tv_beer = findViewById(R.id.tv_beer);
-        tv_soju = findViewById(R.id.tv_soju);
-        tv_wine = findViewById(R.id.tv_wine);
-        tv_whiskey = findViewById(R.id.tv_whiskey);
-        tv_rum = findViewById(R.id.tv_rum);
-        tv_jin = findViewById(R.id.tv_jin);
-        tv_vodka = findViewById(R.id.tv_vodka);
-        tv_portwine = findViewById(R.id.tv_portwine);
-        tv_champagne = findViewById(R.id.tv_champagne);
-        tv_makgeolli = findViewById(R.id.tv_makgeolli);
+        beerBtn = findViewById(R.id.beerArea);
+        sojuBtn = findViewById(R.id.sojuArea);
+        wineBtn = findViewById(R.id.wineArea);
+        whiskeyBtn = findViewById(R.id.whiskeyArea);
+        rumBtn = findViewById(R.id.rumArea);
+        jinBtn = findViewById(R.id.jinArea);
+        vodkaBtn = findViewById(R.id.vodkaArea);
+        portwineBtn = findViewById(R.id.portwineArea);
+        champagneBtn = findViewById(R.id.champagneArea);
+        makgeolliBtn = findViewById(R.id.makgeolliArea);
         searchView = findViewById(R.id.searchView);
         iv_backbtn = findViewById(R.id.backbtn);
         RecyclerView recyclerBeer = findViewById(R.id.recyclerBeer);
@@ -88,7 +89,7 @@ public class SearchActivity extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         databaseReference = database.getReference("Graduation").child("Alcohol");
 
-        tv_beer.setOnClickListener(new View.OnClickListener() {
+        beerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (beerVisible) {
@@ -130,7 +131,7 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
 
-        tv_soju.setOnClickListener(new View.OnClickListener() {
+        sojuBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (sojuVisible) {
@@ -172,7 +173,7 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
 
-        tv_wine.setOnClickListener(new View.OnClickListener() {
+        wineBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (wineVisible) {
@@ -214,7 +215,7 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
 
-        tv_whiskey.setOnClickListener(new View.OnClickListener() {
+        whiskeyBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (whiskeyVisible) {
@@ -256,7 +257,7 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
 
-        tv_rum.setOnClickListener(new View.OnClickListener() {
+        rumBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (rumVisible) {
@@ -299,7 +300,7 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
 
-        tv_vodka.setOnClickListener(new View.OnClickListener() {
+        vodkaBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (vodkaVisible) {
@@ -341,7 +342,7 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
 
-        tv_jin.setOnClickListener(new View.OnClickListener() {
+        jinBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (jinVisible) {
@@ -383,7 +384,7 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
 
-        tv_portwine.setOnClickListener(new View.OnClickListener() {
+        portwineBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (portwineVisible) {
@@ -425,7 +426,7 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
 
-        tv_champagne.setOnClickListener(new View.OnClickListener() {
+        champagneBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (champagneVisible) {
@@ -467,7 +468,7 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
 
-        tv_makgeolli.setOnClickListener(new View.OnClickListener() {
+        makgeolliBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (makgeolliVisible) {

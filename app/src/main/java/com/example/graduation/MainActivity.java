@@ -2,11 +2,11 @@ package com.example.graduation;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -22,15 +22,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 public class MainActivity extends AppCompatActivity {
     ImageView  mediaBtn, cameraBtn, mypageBtn, searchBtn, commuBtn;
@@ -40,97 +35,15 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager layoutManager;
     private ArrayList<Alcohol> arrayList;
 
-    String nickname, recom1st, recom2nd, recom3rd; // 사용자닉네임, 1~3순위 추천요소
-    float degree; // 사용자 선호 도수
-    int sweetness, bitterness, price; // 사용자 선호 단맛, 쓴맛, 가격
-    Boolean carbonated; // 사용자 선호 탄산 여부
+    String nickname; // 사용자닉네임, 1~3순위 추천요소
+    float user_degree; // 사용자 선호 도수
+    int user_sweetness, user_bitterness, user_price, user_carbonation; // 사용자 선호 단맛, 쓴맛, 가격
+    Boolean user_carbonated; // 사용자 선호 탄산 여부
     TextView tv_nickname;
-    float degreeValue=0.0f, priceValue=0.0f, sweetValue=0.0f, bitterValue=0.0f, carbonValue=0.0f;
-    float total;
-    HashMap<String, Float> score = new HashMap<>();
+    String[][] user_preference = new String[1][5];
+    int total = 0;
+    HashMap<String, Integer> score = new HashMap<>();
     ArrayList<String> top3 = new ArrayList<>();
-
-    float returnDegree(float value, float alcohol_degree, float user_degree) {
-        float alcohol_pos = 0.0f, user_pos = 0.0f;
-        float result;
-        if (alcohol_degree <= 10) {alcohol_pos=0.2f;}
-        else if(alcohol_degree >10 && alcohol_degree <= 20) {alcohol_pos=0.4f;}
-        else if(alcohol_degree >20 && alcohol_degree <= 30) {alcohol_pos=0.6f;}
-        else if(alcohol_degree >30 && alcohol_degree <= 40) {alcohol_pos=0.8f;}
-        else if(alcohol_degree >40 && alcohol_degree <= 50) {alcohol_pos=1.0f;}
-        if (user_degree <= 10) {user_pos=0.2f;}
-        else if(user_degree >10 && user_degree <= 20) {user_pos=0.4f;}
-        else if(user_degree >20 && user_degree <= 30) {user_pos=0.6f;}
-        else if(user_degree >30 && user_degree <= 40) {user_pos=0.8f;}
-        else if(user_degree >40 && user_degree <= 50) {user_pos=1.0f;}
-        result = value * (1-Math.abs(alcohol_pos-user_pos));
-        return result;
-    }
-
-    float returnPrice(float value, int alcohol_price, int user_price) {
-        float alcohol_pos = 0.0f, user_pos = 0.0f;
-        float result;
-        if (alcohol_price <= 10000) {alcohol_pos=0.25f;}
-        else if(alcohol_price > 10000 && alcohol_price <= 50000) {alcohol_pos=0.5f;}
-        else if(alcohol_price >50000 && alcohol_price <= 100000) {alcohol_pos=0.75f;}
-        else if(alcohol_price > 100000) {alcohol_pos=1.0f;}
-        if (user_price <= 10000) {user_pos=0.25f;}
-        else if(user_price > 10000 && user_price <= 50000) {user_pos=0.5f;}
-        else if(user_price >50000 && user_price <= 100000) {user_pos=0.75f;}
-        else if(user_price > 100000) {user_pos=1.0f;}
-        result = value * (1-Math.abs(alcohol_pos-user_pos));
-        return result;
-    }
-
-    float returnSweet(float value, int alcohol_sweet, int user_sweet) {
-        float alcohol_pos = 0.0f, user_pos = 0.0f;
-        float result;
-        switch(alcohol_sweet) {
-            case 1 : alcohol_pos = 0.2f; break;
-            case 2 : alcohol_pos = 0.4f; break;
-            case 3 : alcohol_pos = 0.6f; break;
-            case 4 : alcohol_pos = 0.8f; break;
-            case 5 : alcohol_pos = 1.0f; break;
-        }
-        switch(user_sweet) {
-            case 1 : user_pos = 0.2f; break;
-            case 2 : user_pos = 0.4f; break;
-            case 3 : user_pos = 0.6f; break;
-            case 4 : user_pos = 0.8f; break;
-            case 5 : user_pos = 1.0f; break;
-        }
-        result = value * (1-Math.abs(alcohol_pos-user_pos));
-        return result;
-    }
-
-    float returnBitter(float value, int alcohol_bitter, int user_bitter) {
-        float alcohol_pos = 0.0f, user_pos = 0.0f;
-        float result;
-        switch(alcohol_bitter) {
-            case 1 : alcohol_pos = 0.2f; break;
-            case 2 : alcohol_pos = 0.4f; break;
-            case 3 : alcohol_pos = 0.6f; break;
-            case 4 : alcohol_pos = 0.8f; break;
-            case 5 : alcohol_pos = 1.0f; break;
-        }
-        switch(user_bitter) {
-            case 1 : user_pos = 0.2f; break;
-            case 2 : user_pos = 0.4f; break;
-            case 3 : user_pos = 0.6f; break;
-            case 4 : user_pos = 0.8f; break;
-            case 5 : user_pos = 1.0f; break;
-        }
-        result = value * (1-Math.abs(alcohol_pos-user_pos));
-        return result;
-    }
-
-    float returnCarbon(float value, Boolean alcohol_carbon, Boolean user_carbon) {
-        float pos = 1.0f;
-        float result;
-        if(alcohol_carbon != user_carbon) { pos = 0.5f; }
-        result = value * pos;
-        return result;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -144,11 +57,8 @@ public class MainActivity extends AppCompatActivity {
         searchBtn = findViewById(R.id.searchbtn);
         commuBtn = findViewById(R.id.commubtn);
 
-        tv_nickname = findViewById(R.id.nickname);
-        TextView text1 = findViewById(R.id.text1);
-        TextView text2 = findViewById(R.id.text2);
-        TextView text3 = findViewById(R.id.text3);
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        tv_nickname = findViewById(R.id.nickname);
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser(); // 현재 사용자 정보 가져옴
 
@@ -163,57 +73,29 @@ public class MainActivity extends AppCompatActivity {
                         nickname = snapshot.child("nickname").getValue(String.class);
                         String temp_degree = snapshot.child("degree").getValue(String.class);
                         String temp_price = snapshot.child("price").getValue(String.class);
-                        sweetness = snapshot.child("sweetness").getValue(int.class);
-                        bitterness = snapshot.child("bitterness").getValue(int.class);
-                        carbonated = snapshot.child("carbonated").getValue(Boolean.class);
-                        recom1st = snapshot.child("recom1st").getValue(String.class);
-                        recom2nd = snapshot.child("recom2nd").getValue(String.class);
-                        recom3rd = snapshot.child("recom3rd").getValue(String.class);
-                        tv_nickname.setText(nickname);
-
+                        user_sweetness = snapshot.child("sweetness").getValue(int.class);
+                        user_bitterness = snapshot.child("bitterness").getValue(int.class);
+                        user_carbonated = snapshot.child("carbonated").getValue(Boolean.class);
                         //도수(String) -> float
                         switch(temp_degree) {
-                            case "10 이하" : degree = 5; break;
-                            case "10~20" : degree = 15; break;
-                            case "20~30" : degree = 25; break;
-                            case "30~40" : degree = 35; break;
-                            case "40~50" : degree = 45; break;
+                            case "10 이하" : user_preference[0][0] = "low"; break;
+                            case "10~20" : user_preference[0][0] = "medium"; break;
+                            case "20~30" : user_preference[0][0] = "little_high"; break;
+                            case "30~40" : user_preference[0][0] = "high"; break;
+                            case "40~50" : user_preference[0][0] = "very_high"; break;
                         }
                         //가격(String) -> int
                         switch(temp_price) {
-                            case "1만원 이하" : price = 5000; break;
-                            case "1~5만원"  : price = 25000; break;
-                            case "5~10만원" : price = 75000; break;
-                            case "10만원 이상" : price = 125000; break;
+                            case "1만원 이하" : user_preference[0][1] = "cheap"; break;
+                            case "1~5만원"  : user_preference[0][1] = "average"; break;
+                            case "5~10만원" : user_preference[0][1] = "expensive"; break;
+                            case "10만원 이상" : user_preference[0][1] = "very_expensive" ; break;
                         }
-                        //가중치 설정 1~3순위
-                        switch(recom1st) {
-                            case "도수" : degreeValue = 27f; break;
-                            case "가격" : priceValue = 27f; break;
-                            case "단맛" : sweetValue = 27f; break;
-                            case "쓴맛" : bitterValue = 27f; break;
-                            case "탄산 여부" : carbonValue = 27f; break;
-                        }
-                        switch(recom2nd) {
-                            case "도수" : degreeValue = 22.5f; break;
-                            case "가격" : priceValue = 22.5f; break;
-                            case "단맛" : sweetValue = 22.5f; break;
-                            case "쓴맛" : bitterValue = 22.5f; break;
-                            case "탄산 여부" : carbonValue = 22.5f; break;
-                        }
-                        switch(recom3rd) {
-                            case "도수" : degreeValue = 18f; break;
-                            case "가격" : priceValue = 18f; break;
-                            case "단맛" : sweetValue = 18f; break;
-                            case "쓴맛" : bitterValue = 18f; break;
-                            case "탄산 여부" : carbonValue = 18f; break;
-                        }
-                        //4~5순위 가중치 설정
-                        if(degreeValue == 0) {degreeValue = 13.5f;}
-                        if(priceValue == 0) {priceValue = 13.5f;}
-                        if(sweetValue == 0) {sweetValue = 13.5f;}
-                        if(bitterValue == 0) {bitterValue = 13.5f;}
-                        if(carbonValue == 0) {carbonValue = 13.5f;}
+                        user_preference[0][2] = returnSweetness(user_sweetness);
+                        user_preference[0][3] = returnBitterness(user_bitterness);
+                        user_preference[0][4] = returnCarbonation(user_carbonated);
+
+                        tv_nickname.setText(nickname);
 
                         databaseReference = FirebaseDatabase.getInstance().getReference("Graduation").child("Alcohol");
                         Query query = databaseReference.orderByChild("name");
@@ -222,28 +104,22 @@ public class MainActivity extends AppCompatActivity {
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                                     total = 0;
-                                    Float get_degree = snapshot.child("degree").getValue(Float.class);
-                                    int get_price = snapshot.child("price").getValue(int.class);
-                                    int get_sweet = snapshot.child("sweetness").getValue(int.class);
-                                    int get_bitter = snapshot.child("bitterness").getValue(int.class);
-                                    String temp_carbon = snapshot.child("carbonated").getValue(String.class);
-                                    Boolean get_carbon;
-                                    if(temp_carbon.equals("O")) {get_carbon=true;}
-                                    else {get_carbon=false;}
-
-                                    //점수 계산
-                                    total += returnDegree(degreeValue,get_degree,degree);
-                                    total += returnPrice(priceValue,get_price,price);
-                                    total += returnSweet(sweetValue, get_sweet, sweetness);
-                                    total += returnBitter(bitterValue, get_bitter, bitterness);
-                                    total += returnCarbon(carbonValue, get_carbon, carbonated);
-                                    score.put(snapshot.child("name").getValue(String.class),total);
-
+                                    String name = snapshot.child("name").getValue(String.class);
+                                    String get_degree = returnDegree(snapshot.child("degree").getValue(Float.class));
+                                    String get_price = returnPrice(snapshot.child("price").getValue(int.class));
+                                    String get_sweet = returnSweetness(snapshot.child("sweetness").getValue(int.class));
+                                    String get_bitter = returnBitterness(snapshot.child("bitterness").getValue(int.class));
+                                    String get_carbon = snapshot.child("carbonated").getValue(String.class);
+                                    total += distanceDegree(user_preference[0][0],get_degree);
+                                    total += distancePrice(user_preference[0][1],get_price);
+                                    total += distanceSweet(user_preference[0][2],get_sweet);
+                                    total += distanceBitter(user_preference[0][3],get_bitter);
+                                    total += distanceCarbon(user_preference[0][4],get_carbon);
+                                    score.put(name,total);
                                 }
                                 // 점수를 기준으로 내림차순으로 정렬된 술 이름을 가져오기
                                 List<String> keys = new ArrayList<>(score.keySet());
-
-                                Collections.sort(keys, (v1, v2) -> (score.get(v2).compareTo(score.get(v1))));
+                                Collections.sort(keys, (v1, v2) -> (score.get(v1).compareTo(score.get(v2))));
 
                                 //상위 3개 술이름 가져오기
                                 int count = 0;
@@ -252,9 +128,7 @@ public class MainActivity extends AppCompatActivity {
                                     count += 1;
                                     if (count == 3) { break; }
                                 }
-                                text1.setText(top3.get(0) + " : " + score.get(top3.get(0)));
-                                text2.setText(top3.get(1) + " : " + score.get(top3.get(1)));
-                                text3.setText(top3.get(2) + " : " + score.get(top3.get(2)));
+
 
                                 //리사이클러뷰에 가장 높은 점수를 받은 술 3개 연결
                                 recyclerView.setHasFixedSize(true); // 리사이클러뷰 기존성능 강화
@@ -338,7 +212,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+        
+        //커뮤니티 버튼
         commuBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -347,5 +222,137 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    String returnDegree(float degree) {
+        String word = "";
+        if(degree <= 10) {word = "low";}
+        else if(degree > 10 && degree <= 20) {word = "medium"; }
+        else if(degree > 20 && degree <= 30) {word = "little_high"; }
+        else if(degree > 30 && degree <= 40) {word = "high"; }
+        else {word = "very_high";}
+
+        return word;
+    }
+
+    String returnPrice(int price) {
+        String word = "";
+        if(price <= 10000) {word = "cheap";}
+        else if(price > 10000 && price <= 50000) {word = "average"; }
+        else if(price > 50000 && price <= 100000) {word = "expensive"; }
+        else {word = "very_expensive";}
+
+        return word;
+    }
+
+
+    String returnSweetness(int sweetness) {
+        String word = "";
+        switch(sweetness) {
+            case 0 : word = "no_sweet" ; break;
+            case 1 : word = "no_sweet" ; break;
+            case 2 : word = "average" ; break;
+            case 3 : word = "little_sweet" ; break;
+            case 4 : word = "sweet" ; break;
+            case 5 : word = "very_sweet" ; break;
+        }
+        return word;
+    }
+    String returnBitterness(int bitterness) {
+        String word = "";
+        switch(bitterness) {
+            case 0 : word = "no_bitter" ; break;
+            case 1 : word = "no_bitter" ; break;
+            case 2 : word = "average" ; break;
+            case 3 : word = "little_bitter" ; break;
+            case 4 : word = "bitter" ; break;
+            case 5 : word = "very_sweet" ; break;
+        }
+        return word;
+    }
+    String returnCarbonation(Boolean carbonation) {
+        String word = "";
+        if (carbonation == true) {word = "O";}
+        else {word = "X";}
+        return word;
+    }
+
+    int distanceDegree(String user_degree,String alcohol_degree) {
+        int user = 0, alcohol = 0;
+        switch(user_degree) {
+            case "low" : user = 1; break;
+            case "medium" : user = 2; break;
+            case "little_high" : user = 3; break;
+            case "high" : user = 4; break;
+            case "very_high" : user = 5; break;
+        }
+        switch(alcohol_degree) {
+            case "low" : alcohol = 1; break;
+            case "medium" : alcohol = 2; break;
+            case "little_high" : alcohol = 3; break;
+            case "high" : alcohol = 4; break;
+            case "very_high" : alcohol = 5; break;
+        }
+        return Math.abs(user-alcohol);
+    }
+
+    int distancePrice(String user_price,String alcohol_price) {
+        int user = 0, alcohol = 0;
+        switch(user_price) {
+            case "cheap" : user = 1; break;
+            case "average" : user = 2; break;
+            case "expensive" : user = 3; break;
+            case "very_expensive" : user = 4; break;
+        }
+        switch(alcohol_price) {
+            case "cheap" : alcohol = 1; break;
+            case "average" : alcohol = 2; break;
+            case "expensive" : alcohol = 3; break;
+            case "very_expensive" : alcohol = 4; break;
+        }
+        return Math.abs(user-alcohol);
+    }
+    int distanceSweet(String user_sweet,String alcohol_sweet) {
+        int user = 0, alcohol = 0;
+        switch(user_sweet) {
+            case "no_sweet" : user = 1 ; break;
+            case "average" : user = 2 ; break;
+            case "little_sweet" : user = 3; break;
+            case "sweet" : user = 4; break;
+            case "very_sweet" : user = 5; break;
+        }
+        switch(alcohol_sweet) {
+            case "no_sweet" : alcohol = 1 ; break;
+            case "average" : alcohol = 2 ; break;
+            case "little_sweet" : alcohol = 3; break;
+            case "sweet" : alcohol = 4; break;
+            case "very_sweet" : alcohol = 5; break;
+        }
+        return Math.abs(user-alcohol);
+    }
+    int distanceBitter(String user_bitter,String alcohol_bitter) {
+        int user = 0, alcohol = 0;
+        switch(user_bitter) {
+            case "no_bitter" : user = 1 ; break;
+            case "average" : user = 2 ; break;
+            case "little_bitter" : user = 3; break;
+            case "bitter" : user = 4; break;
+            case "very_sweet" : user = 5; break;
+        }
+        switch(alcohol_bitter) {
+            case "no_bitter" : alcohol = 1 ; break;
+            case "average" : alcohol = 2 ; break;
+            case "little_bitter" : alcohol = 3; break;
+            case "bitter" : alcohol = 4; break;
+            case "very_sweet" : alcohol = 5; break;
+        }
+        return Math.abs(user-alcohol);
+    }
+
+    int distanceCarbon(String user_carbon,String alcohol_carbon) {
+        int distance;
+        if(user_carbon.equals(alcohol_carbon)) {distance = 0;}
+        else {distance=1;}
+        return distance;
     }
 }

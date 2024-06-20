@@ -1,11 +1,31 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-	<!-- start styles -->
+<resources xmlns:tools="http://schemas.android.com/tools">
+	<!-- Custom button style -->
+	<style name="CustomButton" parent="Widget.MaterialComponents.Button">
+		<item name="android:textColor">@color/black</item> <!-- 글자색 검정색 -->
+		<item name="backgroundTint">@null</item> <!-- 백그라운드 틴트 제거 -->
+		<item name="android:background">@drawable/rounded_button</item> <!-- 둥근 테두리 적용 -->
+		<item name="android:elevation">0dp</item> <!-- 그림자 제거 -->
+	</style>
 
-	<style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-		<item name="colorPrimary">@color/colorPrimary</item>
-		<item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-		<item name="colorAccent">@color/colorAccent</item>
+	<style name="CustomButtonBlack" parent="Widget.MaterialComponents.Button">
+		<item name="android:textColor">@color/white</item> <!-- 글자색 하얀색 -->
+		<item name="backgroundTint">@color/black</item> <!-- 배경색 검정색 -->
+		<item name="android:background">@drawable/rounded_button</item> <!-- 둥근 테두리 적용 -->
+		<item name="android:elevation">0dp</item> <!-- 그림자 제거 -->
+	</style>
+
+
+	<!-- Another custom button style with different background color -->
+	<style name="AlcoholCustomButton" parent="Widget.MaterialComponents.Button">
+		<item name="android:textColor">@color/black</item> <!-- 글자색 검정색 -->
+		<item name="backgroundTint">#C9FFB0</item> <!-- 채우기색 설정 -->
+		<item name="android:background">@drawable/rounded_button</item> <!-- 둥근 테두리 적용 -->
+		<item name="android:elevation">5dp</item> <!-- 그림자 제거 -->
+	</style>
+
+	<style name="MypageCustomButton" parent="Widget.MaterialComponents.Button">
+		<item name="android:backgroundTint">#F0F0F0</item> <!-- 밝은 회색 배경 -->
+		<item name="android:textColor">#000000</item> <!-- 검정 글씨 -->
 	</style>
 
 </resources>

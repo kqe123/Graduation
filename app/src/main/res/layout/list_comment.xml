@@ -16,8 +16,7 @@
             android:layout_marginRight="20dp"
             android:layout_marginTop="7dp"
             android:layout_marginBottom="7dp"
-            android:orientation="vertical"
-            android:background="@drawable/text_shape">
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -26,39 +25,53 @@
                     android:id="@+id/tv_userName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:paddingTop="5dp"
+
+                    android:paddingBottom="5dp"
                     android:textColor="@color/black"
-                    android:text="닉네임" />
+                    android:fontFamily="@font/spoqahansans_bold"
+                    android:text="닉네임"
+                    android:textSize="15dp"/>
                 <TextView
                     android:id="@+id/tv_age"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
-                    android:fontFamily="@font/maruburi"
+                    android:textColor="#585858"
                     android:text="..."/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="3dp"
-                    android:fontFamily="@font/maruburi"
-                    android:text="/"/>
+                    android:textColor="#585858"
+                    android:text="|"/>
                 <TextView
                     android:id="@+id/tv_gender"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="3dp"
-                    android:fontFamily="@font/maruburi"
+                    android:textColor="#585858"
                     android:text="..."/>
             </LinearLayout>
 
             <TextView
                 android:id="@+id/tv_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="1dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/maruburi"
+                android:paddingBottom="5dp"
+
+                android:paddingTop="1dp"
                 android:textColor="@color/black"
-                android:text="댓글" />
+                android:text="댓글"
+                android:textSize="16dp"/>
+
 
         </LinearLayout>
+    <View
+        android:layout_marginTop="1dp"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#E0E0E0"/>
 
     </LinearLayout>

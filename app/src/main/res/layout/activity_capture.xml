@@ -6,31 +6,55 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".CaptureActivity">
-    <ImageView
-        android:id="@+id/capture_image"
-        android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:rotation="90"
-        />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/maruburi"
+        android:text="사진 결과"
+        android:layout_gravity="center"
+        android:textSize="30dp"
+        android:fontFamily="@font/spoqahansans_bold"
+        android:textColor="@color/black"
+        />
+    <ImageView
+        android:id="@+id/capture_image"
+        android:layout_width="match_parent"
+        android:layout_height="370dp"
+        android:rotation="90"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:textSize="20dp"
         android:layout_marginBottom="20dp"
-        android:text="해당 사진을 이미지 인식하시겠습니까?" />
-    <Button
+        android:layout_marginTop="50dp"
+        android:textColor="@color/black"
+        android:text="해당 사진으로 검색하시겠습니까?" />
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/maruburi"
-        android:text="설정"
-        android:layout_gravity="center"/>
-    <Button
-        android:id="@+id/btn_back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/maruburi"
-        android:text="취소"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="다시 찍기"
+            android:textSize="15dp"
+            android:layout_gravity="center"
+            style="@style/CustomButton"/>
+
+        <Button
+            android:id="@+id/btn_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="검  색"
+            android:textSize="15dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            style="@style/CustomButtonBlack"/>
+    </LinearLayout>
 </LinearLayout>

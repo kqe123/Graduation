@@ -49,7 +49,7 @@ public class ComdetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_comdetail);
 
         recyclerView = findViewById(R.id.answer);
-        recyclerView.setHasFixedSize(true);
+        recyclerView.setNestedScrollingEnabled(false);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         arrayList = new ArrayList<>();

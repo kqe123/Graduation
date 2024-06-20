@@ -14,10 +14,11 @@
             android:id="@+id/tv_postTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
+            android:layout_marginLeft="5dp"
+            android:fontFamily="@font/spoqahansans_bold"
             android:text="게시물 제목"
             android:textColor="@color/black"
-            android:fontFamily="@font/maruburi" />
+            android:textSize="15dp"/>
 
         <TextView
             android:id="@+id/tv_commentCount"
@@ -36,17 +37,16 @@
             android:gravity="right|center"
             android:orientation="vertical"
             android:layout_marginRight="10dp">
+
             <TextView
                 android:id="@+id/tv_create_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="....."
-                android:fontFamily="@font/maruburi"
-                android:textColor="@color/black" />
+                android:textSize="15dp"
+                android:textColor="#585858" />
         </LinearLayout>
     </LinearLayout>
-
-
 
     <View
         android:layout_width="match_parent"

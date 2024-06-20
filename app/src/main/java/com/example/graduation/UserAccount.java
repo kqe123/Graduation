@@ -14,9 +14,6 @@ public class UserAccount
     private int sweetness; // 사용자 취향(단맛)
     private int bitterness; // 사용자 취향(쓴맛)
     private Boolean carbonated; // 사용자 취향(탄산)
-    private String recom1st;
-    private String recom2nd;
-    private String recom3rd;
 
 
 
@@ -67,16 +64,4 @@ public class UserAccount
     public Boolean getCarbonated() { return carbonated; }
 
     public void setCarbonated(Boolean carbonated) { this.carbonated = carbonated; }
-
-    public String getRecom1st() { return recom1st;}
-
-    public void setRecom1st(String recom1st) { this.recom1st = recom1st; }
-
-    public String getRecom2nd() { return recom2nd; }
-
-    public void setRecom2nd(String recom2nd) { this.recom2nd = recom2nd; }
-
-    public String getRecom3rd() { return recom3rd; }
-
-    public void setRecom3rd(String recom3rd) { this.recom3rd = recom3rd; }
 }

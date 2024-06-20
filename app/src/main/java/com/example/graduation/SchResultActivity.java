@@ -34,7 +34,7 @@ public class SchResultActivity extends AppCompatActivity {
         String keyword = intent.getStringExtra("keyword");
 
         TextView searchContent = findViewById(R.id.searchContent);
-        searchContent.setText(keyword);
+        searchContent.setText("'"+keyword+"'");
         RecyclerView recyclerSearch = findViewById(R.id.recyclerSearch);
         database = FirebaseDatabase.getInstance();
         databaseReference = database.getReference("Graduation").child("Alcohol");
