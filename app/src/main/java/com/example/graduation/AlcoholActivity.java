@@ -99,9 +99,9 @@ public class AlcoholActivity extends AppCompatActivity {
                 Glide.with(AlcoholActivity.this).load(image).into(iv_image);
                 tv_name.setText(alcohol_name);
                 tv_category.setText(category);
-                tv_degree.setText( Float.toString(degree) +"%   |");
-                tv_price.setText(Integer.toString(price) + " ₩");
-                tv_carbonated.setText("탄산  " + carbonated);
+                tv_degree.setText( Float.toString(degree) +"%");
+                tv_price.setText("₩ " +Integer.toString(price));
+                tv_carbonated.setText(carbonated);
                 tv_taste.setText(taste);
                 tv_content.setText(content);
 
@@ -148,7 +148,7 @@ public class AlcoholActivity extends AppCompatActivity {
                                     @Override
                                     public void onSuccess(Void unused) {
                                         updateActivity(alcohol_name);
-                                        Toast.makeText(getApplicationContext(), "리뷰가 성공적으로 등록됬습니다!", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(getApplicationContext(), "리뷰가 성공적으로 등록되었습니다!", Toast.LENGTH_SHORT).show();
                                         et_reviewcontent.setText("");
                                     }
                                 });

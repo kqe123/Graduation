@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.graduation.ml.AutoModel3class3;
 import com.example.graduation.ml.AutoModel6class;
 
 import org.tensorflow.lite.DataType;
@@ -65,17 +66,18 @@ public class CaptureActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String result = null;
                 try {
-                    AutoModel6class model = AutoModel6class.newInstance(CaptureActivity.this);
+
+                    AutoModel3class3 model = AutoModel3class3.newInstance(CaptureActivity.this);
 
                     // Creates inputs for reference.
-                    TensorBuffer inputFeature0 = TensorBuffer.createFixedSize(new int[]{1, 150, 150, 3}, DataType.FLOAT32);
-                    bm = Bitmap.createScaledBitmap(bm,150,150,true);
+                    TensorBuffer inputFeature0 = TensorBuffer.createFixedSize(new int[]{1, 224, 224, 3}, DataType.FLOAT32);
+                    bm = Bitmap.createScaledBitmap(bm,224,224,true);
                     Bitmap bm2 = bm.copy(Bitmap.Config.ARGB_8888, true);
                     ByteBuffer inputBuffer = normalize(bm2);
                     inputFeature0.loadBuffer(inputBuffer);
 
                     // Runs model inference and gets result.
-                    AutoModel6class.Outputs outputs = model.process(inputFeature0);
+                    AutoModel3class3.Outputs outputs = model.process(inputFeature0);
                     TensorBuffer outputFeature0 = outputs.getOutputFeature0AsTensorBuffer();
 
                     float[] confidences = outputFeature0.getFloatArray();
@@ -87,10 +89,10 @@ public class CaptureActivity extends AppCompatActivity {
                             maxPos = i;
                         }
                     }
-                    
-                    if(getMax(outputFeature0.getFloatArray()) == 0) { result = "참이슬";}
-                    else if(getMax(outputFeature0.getFloatArray()) == 2) { result = "카스";}
-                    else if(getMax(outputFeature0.getFloatArray()) == 4) { result = "조니 워커 블랙 레이블";}
+
+                    if(getMax(outputFeature0.getFloatArray()) == 0) { result = "버드와이저";}
+                    else if(getMax(outputFeature0.getFloatArray()) == 1) { result = "카스";}
+                    else if(getMax(outputFeature0.getFloatArray()) == 2) { result = "참이슬";}
                     else {result = "없음";}
 
                     if (!(result.equals("없음"))) {
@@ -118,12 +120,12 @@ public class CaptureActivity extends AppCompatActivity {
                     intent.putExtra("name", result);
                     startActivity(intent);
                 }
-                else if (result.equals("조니 워커 블랙 레이블")) {
+                else if (result.equals("버드와이저")) {
                     Intent intent = new Intent(CaptureActivity.this, AlcoholActivity.class);
                     intent.putExtra("name", result);
                     startActivity(intent);
                 }
-                
+
             }
         });
 
@@ -150,7 +152,7 @@ public class CaptureActivity extends AppCompatActivity {
 
     // Bitmap을 ByteBuffer로 변환하는 함수
     private ByteBuffer normalize(Bitmap bitmap) {
-        int imageSize = 150 * 150;
+        int imageSize = 224 * 224;
 
         ByteBuffer byteBuffer = ByteBuffer.allocateDirect(4 * imageSize * 3);
         byteBuffer.order(ByteOrder.nativeOrder());
@@ -159,8 +161,8 @@ public class CaptureActivity extends AppCompatActivity {
         bitmap.getPixels(intValues, 0, bitmap.getWidth(), 0, 0, bitmap.getWidth(), bitmap.getHeight());
 
         int pixel = 0;
-        for (int i = 0; i < 150; i++) {
-            for (int j = 0; j < 150; j++) {
+        for (int i = 0; i < 224; i++) {
+            for (int j = 0; j < 224; j++) {
                 int value = intValues[pixel++];
 
                 // 픽셀의 RGB 값을 가져오기

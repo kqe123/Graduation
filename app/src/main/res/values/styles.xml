@@ -3,16 +3,32 @@
 	<style name="CustomButton" parent="Widget.MaterialComponents.Button">
 		<item name="android:textColor">@color/black</item> <!-- 글자색 검정색 -->
 		<item name="backgroundTint">@null</item> <!-- 백그라운드 틴트 제거 -->
-		<item name="android:background">@drawable/rounded_button</item> <!-- 둥근 테두리 적용 -->
+		<item name="android:background">@drawable/samebackground_button</item> <!-- 둥근 테두리 적용 -->
 		<item name="android:elevation">0dp</item> <!-- 그림자 제거 -->
 	</style>
 
-	<style name="CustomButtonBlack" parent="Widget.MaterialComponents.Button">
-		<item name="android:textColor">@color/white</item> <!-- 글자색 하얀색 -->
-		<item name="backgroundTint">@color/black</item> <!-- 배경색 검정색 -->
-		<item name="android:background">@drawable/rounded_button</item> <!-- 둥근 테두리 적용 -->
+	<style name="CustomButton2" parent="Widget.MaterialComponents.Button">
+		<item name="android:textColor">@color/black</item> <!-- 글자색 검정색 -->
+		<item name="backgroundTint">@null</item> <!-- 백그라운드 틴트 제거 -->
+		<item name="android:background">@drawable/samebackground_button2</item> <!-- 둥근 테두리 적용 -->
 		<item name="android:elevation">0dp</item> <!-- 그림자 제거 -->
 	</style>
+
+	<style name="CustomButtonRed" parent="Widget.MaterialComponents.Button">
+		<item name="android:textColor">@color/white</item> <!-- 글씨 색상: 하얀색 -->
+		<item name="backgroundTint">#FF6F61</item> <!-- 배경 색상: #FF6F61 -->
+		<item name="android:background">@drawable/rounded_button</item> <!-- 둥근 모서리 적용 -->
+		<item name="android:elevation">0dp</item> <!-- 그림자 제거 -->
+	</style>
+
+	<style name="CustomButtonDarkYellow" parent="Widget.MaterialComponents.Button">
+		<item name="android:textColor">@color/black</item> <!-- 글씨 색상 -->
+		<item name="android:background">@drawable/rounded_button_with_border</item> <!-- 배경 및 테두리 -->
+		<item name="android:elevation">0dp</item> <!-- 그림자 제거 -->
+	</style>
+
+
+
 
 
 	<!-- Another custom button style with different background color -->

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="#FFFFFF" /> <!-- 배경 흰색 -->
+    <solid android:color="#FFFFF0" /> <!-- 배경 흰색 -->
     <stroke
-        android:width="0.5dp"
-        android:color="#000000" /> <!-- 진한 검정색 테두리 -->
+        android:width="1dp"
+        android:color="#EFEFE2" /> <!-- 진한 검정색 테두리 -->
     <corners
         android:radius="30dp" /> <!-- 둥근 모양 -->
     <padding

@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.firebase.FirebaseApp;
@@ -24,6 +26,7 @@ public class SchResultActivity extends AppCompatActivity {
     private ArrayList<Alcohol> arrayList;
     private FirebaseDatabase database;
     private DatabaseReference databaseReference;
+    ImageView iv_backbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +35,8 @@ public class SchResultActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sch_result);
         Intent intent = getIntent();
         String keyword = intent.getStringExtra("keyword");
+
+        iv_backbtn = findViewById(R.id.backbtn);
 
         TextView searchContent = findViewById(R.id.searchContent);
         searchContent.setText("'"+keyword+"'");
@@ -67,5 +72,12 @@ public class SchResultActivity extends AppCompatActivity {
         recyclerSearch.setAdapter(adapter); // 리사이클러뷰에 어댑터 연결
 
 
+        iv_backbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
+
 }

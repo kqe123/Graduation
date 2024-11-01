@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".CommunityActivity">
+    tools:context=".CommunityActivity"
+    android:background="#FFFFF0">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -70,8 +71,8 @@
         android:layout_marginRight="10dp"
         android:layout_marginBottom="3dp"
         android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="#E0E0E0" />
+        android:layout_height="1dp"
+        android:background="#EFEFE2" />
 
     <LinearLayout
         android:layout_width="match_parent"

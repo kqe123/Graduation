@@ -22,7 +22,7 @@ import java.util.ArrayList;
 
 public class MediaActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
-    private RecyclerView.Adapter adapter;
+    private MediaAdapter adapter;  // 타입을 MediaAdapter로 변경
     private RecyclerView.LayoutManager layoutManager;
     private ArrayList<Media> arrayList;
     private FirebaseDatabase database;
@@ -121,5 +121,13 @@ public class MediaActivity extends AppCompatActivity {
                 finish(); // 현재 액티비티 종료
             }
         });
+    }
+
+    // 화면 종료시 조작
+    @Override
+    protected void onPause() {
+        super.onPause();
+        adapter.stopAllPlayers();  // 다른 상황에서 동영상 정지
+
     }
 }

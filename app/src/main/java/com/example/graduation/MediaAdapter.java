@@ -21,11 +21,14 @@ import java.util.ArrayList;
 public class MediaAdapter extends RecyclerView.Adapter<MediaAdapter.MediaViewHolder>{
     private ArrayList<Media> arrayList;
     private Context context;
+    private RecyclerView recyclerView;  // RecyclerView 추가
+
 
 
     public MediaAdapter(ArrayList<Media> arrayList, Context context) {
         this.arrayList = arrayList;
         this.context = context;
+        this.recyclerView = recyclerView;  // 전달받은 RecyclerView 저장
     }
 
     @NonNull
@@ -75,5 +78,23 @@ public class MediaAdapter extends RecyclerView.Adapter<MediaAdapter.MediaViewHol
             exoplayer.setPlayWhenReady(false);
         }
 
+        //각 플레이어 중단 메서드
+        public void stopPlayer() {
+            if (exoplayer != null) {
+                exoplayer.stop();  // 재생 중인 동영상 중지
+                exoplayer.release();  // 플레이어 리소스 해제
+            }
+        }
+
+    }
+
+    // 모든 플레이어 중지
+    public void stopAllPlayers() {
+        for (int i = 0; i < getItemCount(); i++) {
+            MediaViewHolder holder = (MediaViewHolder) recyclerView.findViewHolderForAdapterPosition(i);
+            if (holder != null) {
+                holder.stopPlayer();  // 각 ViewHolder의 플레이어를 중지
+            }
+        }
     }
 }

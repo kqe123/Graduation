@@ -10,7 +10,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="_bg__start_ek2_color"></color>
+    <color name="_bg__start_ek2_color">#FF6F61</color>
     <color name="background_color">#FFFFFF</color>
     <color name="loginbtn_color">#F5F5F5</color>
     <color name="login_color">#2C0303</color>
@@ -25,7 +25,7 @@
     <color name="login_ek3_color">#000000</color>
     <color name="douwantjoin2_color">#8F3737</color>
 
-    <color name="_bg__home_ek2_color">#FF2640</color>
+    <color name="_bg__home_ek2_color">#FF6F61</color>
     <color name="background2_color">#FFFFFF</color>
     <color name="menu_color">#D9D9D9</color>
 

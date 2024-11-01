@@ -2,12 +2,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#FFFFF0">
 
     <!--상단바 !-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:orientation="horizontal"
         android:gravity="center_horizontal">
 
@@ -21,11 +22,11 @@
 
         <ImageView
             android:layout_width="0dp"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:layout_gravity="center"
             android:layout_weight="3"
             android:contentDescription="titlel"
-            android:src="@drawable/titlel" />
+            android:src="@drawable/titlex" />
 
         <ImageView
             android:layout_width="30dp"
@@ -219,7 +220,7 @@
                         android:layout_height="wrap_content"
                         android:text=" 취향 설정하기 "
                         android:textSize="20dp"
-                        style="@style/CustomButton" />
+                        style="@style/CustomButton2" />
                 </LinearLayout>
 
                 <Button
@@ -231,7 +232,7 @@
                     android:textSize="20dp"
                     android:fontFamily="@font/spoqahansans_bold"
                     android:layout_gravity="center"
-                    style="@style/CustomButtonBlack" />
+                    style="@style/CustomButtonRed" />
             </LinearLayout>
 
 

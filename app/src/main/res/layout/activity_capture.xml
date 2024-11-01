@@ -5,20 +5,45 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".CaptureActivity">
-    <TextView
+    tools:context=".CaptureActivity"
+    android:background="#EFEFE2">
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="사진 결과"
-        android:layout_gravity="center"
-        android:textSize="30dp"
-        android:fontFamily="@font/spoqahansans_bold"
-        android:textColor="@color/black"
-        />
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="주류"
+            android:layout_gravity="center"
+            android:textSize="30dp"
+            android:fontFamily="@font/spoqahansans_bold"
+            android:textColor="@color/black"
+            />
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/detective"></ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" 탐정"
+            android:layout_gravity="center"
+            android:textSize="30dp"
+            android:fontFamily="@font/spoqahansans_bold"
+            android:textColor="@color/black" />
+
+
+    </LinearLayout>
+
     <ImageView
         android:id="@+id/capture_image"
         android:layout_width="match_parent"
-        android:layout_height="370dp"
+        android:layout_height="450dp"
         android:rotation="90"
         />
 
@@ -45,7 +70,7 @@
             android:text="다시 찍기"
             android:textSize="15dp"
             android:layout_gravity="center"
-            style="@style/CustomButton"/>
+            style="@style/CustomButton" />
 
         <Button
             android:id="@+id/btn_setting"
@@ -55,6 +80,6 @@
             android:textSize="15dp"
             android:layout_gravity="center"
             android:layout_marginLeft="10dp"
-            style="@style/CustomButtonBlack"/>
+            style="@style/CustomButtonRed"/>
     </LinearLayout>
 </LinearLayout>

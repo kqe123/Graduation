@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ComdetailActivity">
+    tools:context=".ComdetailActivity"
+    android:background="#FFFFF0">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,7 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="10dp"
-        android:background="#E0E0E0" />
+        android:background="#FFFFF0" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -78,7 +79,7 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginTop="20dp"
-            android:background="#E0E0E0" />
+            android:background="#EFEFE2" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -99,7 +100,7 @@
                 android:layout_marginTop="1dp"
                 android:layout_width="match_parent"
                 android:layout_height="10dp"
-                android:background="#E0E0E0"/>
+                android:background="#EFEFE2"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/answer"
@@ -137,7 +138,7 @@
             android:layout_marginBottom="5dp"
             android:fontFamily="@font/spoqahansans_bold"
             android:text="작성 완료"
-            style="@style/CustomButtonBlack"/>
+            style="@style/CustomButtonRed"/>
 
     </LinearLayout>
 
