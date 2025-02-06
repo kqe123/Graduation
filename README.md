@@ -2,13 +2,6 @@
 - 앱 이름 : **Barcode**
 - 앱의 목적 : 주류의 정보 전달 및 추천
 
-## 📱실행화면
-
-
-
-
-
-
 ## ⚙️개발 환경 및 기술스택
 
 ### Database & Server
@@ -25,3 +18,15 @@
 
 ### AI
 <img src="https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=for-the-badge&logo=TensorFlow&logoColor=white"/> <img src="https://img.shields.io/badge/Keras-%23D00000.svg?style=for-the-badge&logo=Keras&logoColor=white"/>
+
+
+## 🏢ERD(Entity Relationship Diagram)
+
+
+## 📱실행화면
+
+
+
+
+
+
