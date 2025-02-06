@@ -20,4 +20,3 @@
 
 ### AI
 <img src="https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=for-the-badge&logo=TensorFlow&logoColor=white"/>
-![image](https://github.com/user-attachments/assets/d1565524-01f6-4fe1-be09-3616c2e79384)
