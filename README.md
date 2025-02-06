@@ -1,5 +1,6 @@
 ## 💻Intro
-<img src="images/image1.png" width="300">
+<img src="images/image1.png" width="1000" height="500">
+
 - 앱 이름 : **Barcode**
 - 앱의 목적 : 주류의 정보 전달 및 추천
 
