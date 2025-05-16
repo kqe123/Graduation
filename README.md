@@ -25,6 +25,13 @@
 ## 🏢ERD(Entity Relationship Diagram)
 <img src="images/image2.png" width="800" height="500">
 
+- **Alcohol** : 술 테이블
+- **Media** : 동영상 테이블
+- **Community** : 커뮤니티 글 테이블
+- **UserAccount** : 유저 테이블
+- **Review** : 술 리뷰 테이블
+- **Comment** : 커뮤니티 댓글 테이블
+
 ## 📱실행화면
 
 
