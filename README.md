@@ -23,7 +23,7 @@
 
 
 ## 🏢ERD(Entity Relationship Diagram)
-
+<img src="images/image2.png" width="800" height="500">
 
 ## 📱실행화면
 
