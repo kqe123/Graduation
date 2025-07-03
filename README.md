@@ -1,3 +1,6 @@
+# 🍶 Barcode - 주류와 더 친해질 수 있는 앱
+AI 기반 주류 추천 및 정보 전달 어플리케이션 (2024.03.15 ~ 2024.11.2)
+
 ## 💻Intro
 <img src="images/image1.png" width="800" height="500">
 
